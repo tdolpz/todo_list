@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>To-Do-List</title>
+
+		<link rel="stylesheet" href="beispiel-styles.css" />
+
+		<!-- Fonts start -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- '	Fonts end' -->
+	</head>
+	<body>
+		<!-- App Wrapper start -->
+		<main class="app">
+			<!-- Greeting start -->
+			<section class="greeting">
+				<h1 class="title">
+					Lass uns starten,
+					<input type="text" id="name" placeholder="Name here" />
+				</h1>
+			</section>
+			<!-- greeting end -->
+
+			<!-- New Todo  start-->
+			<section class="create-todo">
+				<h3>ERSTELLE EINE AUFGABE</h3>
+				<form id="new-todo-form">
+					<h4>Was ist heute zu tun?</h4>
+					<input
+						type="text"
+						placeholder="z. B.  Tomaten kaufen"
+						name="content"
+						id="content"
+					/>
+
+					<h4>Wähle eine Kategorie</h4>
+					<div class="options">
+						<label>
+							<input
+								type="radio"
+								name="category"
+								id="category1"
+								value="shopping"
+							/>
+							<span class="bubble shopping"></span>
+							<div>Einkaufen</div>
+						</label>
+						<label>
+							<input
+								type="radio"
+								name="category"
+								id="category2"
+								value="other"
+							/>
+							<span class="bubble other"></span>
+							<div>Sonstiges</div>
+						</label>
+					</div>
+
+					<input type="submit" value="Add todo" />
+				</form>
+			</section>
+			<!-- new todo end-->
+
+			<!-- Todo List start-->
+			<section class="todo-list">
+				<h2>TO-DO-LISTE</h2>
+				<div class="list" id="todo-list"></div>
+			</section>
+			<!-- Todo List end-->
+		</main>
+		<!-- <wrapper end -->
+
+		<script src="beispiel-script.js"></script>
+	</body>
+</html>

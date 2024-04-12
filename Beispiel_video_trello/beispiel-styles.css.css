@@ -1,0 +1,266 @@
+:root {
+	/* 	
+	Alle farben definiert */
+
+	--background: #c8f5e1ee;
+
+	--addbutton: #046d3eee;
+
+	/* Kategorie Einkaufen */
+	--shopping: #00a8e8;
+
+	/* Kategorie Sonstiges */
+	--other: #b4096d;
+
+	--delete: #ff5b57;
+	--edit: #7518b7;
+
+	---dark: #02020c;
+
+	--grey: #6f6d70;
+
+	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+	/* effekte für Bubbles (Kategorien) */
+	--shopping-glow: 0px 0px 4px rgba(232, 0, 166, 0.75);
+
+	--other-glow: 0px 0px 4px rgba(35, 9, 180, 0.75);
+}
+
+/* Grundeinstellung für alle Elemente */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "montserrat", sans-serif;
+}
+
+/* Gestaltung Eingabenmöglichkeit "neue aufgabe" (aber nicht die  bubbles) */
+input:not([type="radio"]):not([type="checkbox"]),
+button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: initial;
+}
+
+/* bezieht sich auf die Farbeinstellungen am Anfang */
+body {
+	background: var(--background);
+	color: var(--dark);
+}
+
+/* Positionierung aller Elemente */
+section {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+h3 {
+	color: var(--dark);
+	font-size: 1rem;
+	font-weight: 400;
+	margin-bottom: 0.5rem;
+}
+
+h4 {
+	color: var(--dark);
+	font-size: 0.875rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+
+.greeting .title {
+	display: flex;
+}
+
+/* Eingabefeld für namen am anfang */
+.greeting .title input {
+	margin-left: 0.5rem;
+	flex: 1 1 0%;
+	min-width: 0;
+}
+
+/* Schrift Design für Eingabefeld Namen */
+.greeting .title,
+.greeting .title input {
+	color: var(--dark);
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+/* Design Eingabefeld neue Aufgabe */
+.create-todo input[type="text"] {
+	display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: var(--dark);
+	background-color: #fff;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	margin-bottom: 1.5rem;
+}
+
+/* Positionierung Kategorie-Felder */
+.create-todo .options {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+/* Design Kategorie-Felder */
+.create-todo .options label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;
+	padding: 1rem;
+	box-shadow: var(--shadow);
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+/* blendet Standard-Radio-Buttons und Checkboxen aus um Stil dafür zu ändern ohne Funktion zu beinträchtigen */
+input[type="radio"],
+input[type="checkbox"] {
+	display: none;
+}
+
+/* gilt für alle  bubbles */
+.bubble {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 25px;
+	height: 25px;
+	border-radius: 999px;
+	border: 4px solid var(--shopping);
+	box-shadow: var(--dark);
+}
+
+/* Gestaltung bubble Kategorie Sonstiges */
+.bubble.other {
+	border-color: var(--other);
+	box-shadow: var(--other-glow);
+}
+
+/* Gestaltung element das in der Bubble drin ist, sobald man sie ausgewählt hat (Hier Punkt, kann  z.B auch Haken sein) Gilt für alle Bubbles*/
+.bubble::after {
+	content: "";
+	display: block;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	background-color: var(---dark);
+	box-shadow: var(--shopping-glow);
+	border-radius: 999px;
+	transition: 0.2s ease-in-out;
+}
+
+/* Ein beispiel, hier wird z.B nur bubble sonstiges verändert. Punkt in Bubble sinstiges ist jetzt blau und  icht schwarz wie bei den anderen bubbles
+.bubble.other::after {
+	background-color: var(--shopping);
+	box-shadow: var(--shopping-glow);
+} */
+
+/* Design Punkt in der Bubble beim ancklicken */
+input:checked ~ .bubble::after {
+	width: 10px;
+	height: 10px;
+	opacity: 1;
+	color: var(--dark);
+}
+
+.create-todo .options label div {
+	color: var(--dark);
+	font-size: 1.125rem;
+	margin-top: 1rem;
+}
+
+.create-todo input[type="submit"] {
+	display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: #fff;
+	font-weight: 700;
+	text-transform: uppercase;
+	background-color: var(--addbutton);
+	box-shadow: var(--other-glow);
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: 0.2s ease-out;
+}
+
+.create-todo input[type="submit"]:hover {
+	opacity: 0.75;
+}
+
+.todo-list .list {
+	margin: 1rem 0;
+}
+
+/* Anzeige der Aufgabe in der Liste */
+.todo-list .todo-item {
+	display: flex;
+	align-items: center;
+	background-color: #fff;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	margin-bottom: 1rem;
+}
+
+/* Positionierung Text in "Anzeige Aufgabe" */
+.todo-item label {
+	display: block;
+	margin-right: 1rem;
+	cursor: pointer;
+}
+
+.todo-item .todo-content {
+	flex: 1 1 0%;
+}
+
+.todo-item .todo-content input {
+	color: var(--dark);
+	font-size: 1.125rem;
+}
+
+.todo-item .actions {
+	display: flex;
+	align-items: center;
+}
+
+.todo-item .actions button {
+	display: block;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	color: #fff;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+
+.todo-item .actions button:hover {
+	opacity: 0.75;
+}
+
+.todo-item .actions .edit {
+	margin-right: 0.5rem;
+	background-color: var(--edit);
+}
+
+.todo-item .actions .delete {
+	background-color: var(--delete);
+}
+
+.todo-item.done .todo-content input {
+	text-decoration: line-through;
+	color: var(--grey);
+}
