@@ -1,0 +1,48 @@
+/*** css reset ***/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*** css vars ***/
+:root {
+  /* fonts */
+  --base-font: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+
+  /* colors */
+  --lightgrey: #eeeeee;
+}
+
+/*** general styles ***/
+body {
+  font-family: var(--base-font);
+  background: #d0dcd0c0;
+}
+
+/* layout */
+.page-wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+header {
+  background: #e7caca;
+}
+main {
+  flex: 1;
+  background: #feffe4;
+}
+footer {
+  background: #bfd5ef;
+}
