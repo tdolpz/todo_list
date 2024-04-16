@@ -1,5 +1,6 @@
 .add-btn,
 .edit-btn,
+.save-btn,
 .remove-btn,
 .reset-btn {
 	padding: 0.5rem 1rem;
@@ -21,6 +22,8 @@ button:hover {
 	  padding: 0.5rem 3rem;
 	}
 }
+
+.save-btn,
 .edit-btn {
 	background-color: var(--tertiary-color);
 	color: var(--font-color-light);
