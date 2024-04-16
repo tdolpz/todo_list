@@ -1,0 +1,107 @@
+.add-btn,
+.edit-btn,
+.save-btn,
+.remove-btn,
+.reset-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: var(--box-shadow-button);
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.add-btn {
+  background-color: var(--add-color);
+  color: var(--font-color-light);
+  padding: 0.5rem 2rem;
+  @media screen and (min-width: 480px) {
+    padding: 0.5rem 3rem;
+  }
+}
+
+.save-btn,
+.edit-btn {
+  background-color: var(--tertiary-color);
+  color: var(--font-color-light);
+}
+
+.remove-btn {
+  color: var(--font-color-light);
+  background-color: var(--reset-color);
+}
+
+.reset-btn {
+  background-color: var(--reset-color);
+  color: var(--font-color-light);
+  /*var(--font-color-light);*/
+  margin-top: 1rem;
+}
+
+/* checkbox */
+.todo-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+/* Standard-Checkbox-Eingabefeld verstecken */
+.todo-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/*  neues Custom-Checkbox-Design */
+.todo-checkbox .checkmark {
+  position: absolute;
+  top: 1;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: var(--font-color-light);
+  border: 8px;
+  border-color: var(--add-color);
+  box-shadow: var(box-shadow-black);
+}
+
+/* hovern */
+.todo-checkbox:hover input ~ .checkmark {
+  background-color: var(--primary-color);
+}
+
+/* Hintergrund, wenn checkbox ausgewählt */
+.todo-checkbox input:checked ~ .checkmark {
+  background-color: var(--font-color-light);
+}
+
+/* Checkmark-Zeichen (versteckt, wenn nicht ausgewählt) */
+.todo-checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/*  Checkmark-Zeichen, wenn ausgewählt */
+.todo-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Checkmark-Zeichen */
+.todo-checkbox .checkmark:after {
+  left: 9px;
+  top: 0px;
+  width: 5px;
+  height: 20px;
+  border: solid var(--font-color-dark);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}

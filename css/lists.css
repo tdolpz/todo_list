@@ -1,0 +1,40 @@
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  gap: 0.5rem;
+  background: var(--secondary-color);
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border-color: var(--border-color);
+  order: -1;
+  &.done {
+    order: unset;
+  }
+}
+
+.task-item-text {
+  flex: 1;
+  padding: 0.5rem;
+  /*
+  border-color: var(--border-color);
+  border-radius: 4px;
+  width: auto;
+  background-color: var(--font-color-light);
+  box-shadow: var(--box-shadow-button);
+*/
+  .done & {
+    text-decoration: line-through;
+  }
+}
+
+/*
+.edit .task-item-text {
+  border-color: var(--border-color);
+  border-radius: 4px;
+  width: auto;
+  background-color: var(--font-color-light);
+  box-shadow: var(--box-shadow-button);
+}
+*/

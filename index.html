@@ -7,18 +7,36 @@
     <title>ToDo List</title>
   </head>
   <body>
+    <!-- page wrap start -->
     <div class="page-wrap">
+      <!-- header start -->
       <header>
-        <div class="container">HEADER</div>
+        <h1>ToDo-List Group 3</h1>
       </header>
-      <main>
-        <div class="container">MAIN</div>
-      </main>
-      <footer>
-        <div class="container">FOOTER</div>
-      </footer>
-    </div>
+      <!-- header end -->
 
+      <!-- main start -->
+      <main>
+        <!-- Begrüßungstext start -->
+        <div class="container-hallo">Hallo,</div>
+        <!-- Begrüßungstext end -->
+
+        <!-- Aufgabe hinzufügen start -->
+        <div class="container-new-todo">
+          <input type="text" class="input-task" id="newTaskInput" placeholder="Neue Aufgabe ..." />
+          <button type="submit" class="add-btn" id="newTaskAddBtn">Add</button>
+        </div>
+        <!-- Aufgabe hinzufügen end -->
+
+        <!-- AlleBeispielaufgaben start -->
+        <ul class="task-list" id="todoList"></ul>
+      </main>
+      <!-- main end -->
+      <!-- footer start -->
+      <footer></footer>
+      <!-- footer end -->
+    </div>
+    <!-- page wrap end -->
     <script src="main.js"></script>
   </body>
 </html>
