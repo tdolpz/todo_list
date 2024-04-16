@@ -1,0 +1,24 @@
+form {
+	background: var(--transparent-background);
+	margin-bottom: 1rem;
+	padding: 0.5rem;
+	border-radius: 4px;
+	border-color: var(--border-color);
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.inputtask {
+	width: 80%;
+	max-width: 500px;
+	margin: 1rem auto;
+	background: var(font-color-light);
+	color: var(--font-color-dark);
+	padding: 2rem;
+	border-radius: 8px;
+	border-color: var(--border-color);
+	box-shadow: var(box-shadow-black);
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}

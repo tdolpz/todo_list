@@ -1,48 +1,144 @@
-/*** css reset ***/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+** css reset ** * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 /*** css vars ***/
 :root {
-  /* fonts */
-  --base-font: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+	/* fonts */
+	--base-font: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-  /* colors */
-  --lightgrey: #eeeeee;
+	/* font colors */
+	--font-color-light: #ffff;
+	--font-color-dark: #010004;
+
+	/* background colors */
+
+	--primary-color: #3f17c2;
+	--secondary-color: #dbd8f7;
+	--tertiary-color: #2c2b2e;
+	--transparent-background: rgba(244, 255, 248, 0); /*Durchsichtig*/
+	--dark-background: #000000;
+	--add-color: #05b09c;
+	--remove-color: #e11044;
+	--reset-color: #e11044;
+
+	/* Schattierung */
+
+	--box-shadow-black: 0 4px 5px rgba(12, 4, 11, 0.5);
+	--box-shadow-button: 0 4px 5px rgba(22, 66, 175, 0.5);
+	--border-color: 1px solid #2b3272;
+	--hover-color: #84ecf8;
 }
 
-/*** general styles ***/
+h1 {
+	color: var(--font-color-light);
+}
+
 body {
-  font-family: var(--base-font);
-  background: #d0dcd0c0;
+	height: 100%;
+	font-family: var(--base-font);
+	background: var(--dark-background);
 }
 
-/* layout */
 .page-wrap {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 header {
-  background: #e7caca;
+	background-color: var(--primary-color);
+	color: var(--font-color-light);
+	padding: 1rem 0;
+	text-align: center;
 }
+
+.containerheader {
+	width: 80%;
+	max-width: 500px;
+	margin: 1rem auto;
+	background: var(--transparent-background);
+	padding: 2rem;
+	border-radius: 8px;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
 main {
-  flex: 1;
-  background: #feffe4;
+	flex: 1;
+	display: grid;
+	place-items: center;
+	background-color: var(--primary-color);
 }
+
+.containerhallo {
+	width: 80%;
+	max-width: 500px;
+	margin: 1rem auto;
+	background: var(--secondary-color);
+	padding: 2rem;
+	border-radius: 8px;
+	box-shadow: var(--box-shadow-black);
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+.containerNewToDo {
+	width: 80%;
+	max-width: 500px;
+	margin: 1rem auto;
+	background: var(--secondary-color);
+	padding: 2rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	border-radius: 8px;
+	box-shadow: var(--box-shadow-black);
+}
+
 footer {
-  background: #bfd5ef;
+	background-color: var(--primary-color);
+	text-align: center;
+	padding: 1rem 0;
 }
+
+.containerfooter {
+	width: 80%;
+	max-width: 500px;
+	margin: 1rem auto;
+	background: var(--transparent-background);
+	color: var(--font-color-light);
+	padding: 2rem;
+	border-radius: 6px;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+/* Media Queries für verschiedene Bildschirmgrößen */
+@media (max-width: 768px) {
+	.container,
+	form,
+	.tasks,
+	.inputtask,
+	button {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+
+
+@media (max-width: 480px) {
+	.container,
+	form,
+	.tasks,
+	.inputtask,
+	.add-btn .edit-btn .delete-btn {
+		width: 95%;
+	}
+
+	
