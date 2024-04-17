@@ -43,12 +43,13 @@ function saveTask() {
 
 function resolveTask() {
   for (let i = 0; i < checkboxes.length; i++) {
-    checkboxes[i].onchange = function () {
+    checkboxes[i].onclick = function () {
       let p = this.parentElement;
-      checkboxes[i].checked ? p.classList.add("done") : p.classList.remove("done");
+      // note: use 'this', not checkboxes[i] inside function body
+      this.checked ? p.classList.add("done") : p.classList.remove("done");
       p.children[1].removeAttribute("contenteditable");
       p.children[2].classList.remove("hide"); // show edit btn
-      p.children[3].classList.add("hide"); // hide save btn
+      p.children[3].classList.add("hide"); // hide save btn*/
     };
   }
 }
