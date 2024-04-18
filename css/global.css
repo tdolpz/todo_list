@@ -19,6 +19,8 @@
   --primary-color: #3f17c2;
   --secondary-color: #dbd8f7;
   --tertiary-color: #2c2b2e;
+  --quaternary-color: #7948cb;
+
   --transparent-background: rgba(244, 255, 248, 0); /*Durchsichtig*/
   --dark-background: #000000;
   --add-color: #05b09c;
@@ -46,7 +48,7 @@ body {
     ),
     url("../pattern.webp");
   background-size: cover;
-  padding: 0.5rem;
+  padding: 1rem 0.5rem;
   @media screen and (min-width: 480px) {
     padding: 2rem 0.5rem;
   }
@@ -58,7 +60,7 @@ body {
 .page-wrap {
   max-width: 700px;
   margin: 0 auto;
-  min-height: calc(100vh - 1rem);
+  min-height: calc(100vh - 2rem);
   background-color: var(--primary-color);
   padding: 0.75rem;
   border: 1px solid #c8c8c8;

@@ -36,7 +36,11 @@ button:hover {
   }
 }
 
-.save-btn,
+.save-btn {
+  background-color: var(--quaternary-color);
+  color: var(--font-color-light);
+}
+
 .edit-btn {
   background-color: var(--tertiary-color);
   color: var(--font-color-light);
