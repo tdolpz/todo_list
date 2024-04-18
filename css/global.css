@@ -1,46 +1,78 @@
 /*** css reset ***/
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 /*** css vars ***/
 :root {
-  /* fonts */
-  --base-font: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+	/* fonts */
+	--base-font: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-  /* font colors */
-  --font-color-light: #ffffff;
-  --font-color-dark: #010004;
+	/* font colors */
+	--font-color-light: #ffffff;
+	--font-color-dark: #010004;
 
-  /* background colors */
-  --primary-color: #3f17c2;
-  --secondary-color: #dbd8f7;
-  --tertiary-color: #2c2b2e;
-  --transparent-background: rgba(244, 255, 248, 0); /*Durchsichtig*/
-  --dark-background: #000000;
-  --add-color: #05b09c;
-  --remove-color: #e11044;
-  --reset-color: #e11044;
+	/* background colors */
+	--primary-color: rgb(63, 60, 214);
+	--primary-color-trans: rgba(63, 60, 214, 0.75);
+	--secondary-color: #eae8f5;
+	--tertiary-color: #2c2b2e;
+	--quaternary-color: #f7dbed;
+	--quinary-color: #8a8893;
+	/--dark-background: #000000;
 
-  /* Schattierung */
-  --box-shadow-black: 0 4px 5px rgba(12, 4, 11, 0.5);
-  --box-shadow-button: 0 4px 5px rgba(22, 66, 175, 0.5);
-  --border-color: 1px solid #2b3272;
-  --hover-color: #84ecf8;
+	/* Button colors */
+	--edit-color: #010004;
+	--add-color: rgb(25, 241, 195);
+	--remove-color: rgb(212, 49, 125);
+
+	/* Specials */
+	--box-shadow-black: 0 4px 5px rgba(12, 4, 11, 0.5);
+	--box-shadow-extra: 10px 12px 12px rgba(12, 4, 11, 0.5);
+	--box-shadow-button: 0 4px 5px rgba(22, 66, 175, 0.5);
+	--border-color: 1px solid #2b3272;
+	--transparent-background: rgba(244, 255, 248, 0);
+
+	/* Hintergrundbild */
+	--pc1: rgba(39, 39, 41, 0.8);
+	--pc2: rgba(109, 100, 109, 0.8);
+	--pc3: rgba(194, 151, 196, 0.8);
+	--pc4: rgba(221, 173, 203, 0.8);
+	--pc5: rgba(142, 226, 219, 0.8);
+	--pc6: rgba(135, 207, 248, 0.8);
+	--pc7: rgba(164, 170, 240, 0.8);
+	--pc8: rgba(210, 214, 250, 0.8);
+	--pc9: rgba(255, 255, 255, 0.8);
 }
 
 h1 {
-  color: var(--font-color-light);
+	color: var(--font-color-light);
 }
 
 body {
-  height: 100%;
-  font-family: var(--base-font);
-  background: var(--dark-background);
-  /*
+	height: 100%;
+	font-family: var(--base-font);
+	background: var(--font-color-light);
+
+	background-image: linear-gradient(
+			to right top,
+			var(--pc1),
+			var(--pc2),
+			var(--pc3),
+			var(--pc4),
+			var(--pc5),
+			var(--pc6),
+			var(--pc7),
+			var(--pc8),
+			var(--pc9)
+		),
+		url("https://wallpapers.com/downloads/high/pattern-phone-3840-x-2400-ib0xw5nr749ommsy.webp");
+	background-size: cover;
+
+	/*
   background-color: hsla(0, 0%, 0%, 1);
   background-image: radial-gradient(at 40% 20%, hsla(289, 15%, 29%, 1) 0px, transparent 50%),
     radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
@@ -53,96 +85,104 @@ body {
 }
 
 .page-wrap {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  min-height: 100vh;
-  background-color: var(--primary-color);
-  padding: 0.5rem;
+	width: 90%;
+	/* max-width: 1200px; */
+	max-width: 700px;
+	margin: 2rem auto;
+	min-height: 100vh;
+	background-color: var(--primary-color-trans);
+	padding: 3rem;
+	border: 1px solid #c8c8c8;
+	border-color: var(--font-color-dark);
+	border-radius: 25px;
+	box-shadow: var(--box-shadow-extra);
 }
 
 header {
-  background-color: var(--primary-color);
-  color: var(--font-color-light);
-  padding: 1rem 0;
-  text-align: center;
-  @media screen and (min-width: 768px) {
-    padding: 2rem 0;
-  }
+	/* background-color: var(--primary-color-trans); */
+	color: var(--font-color-light);
+	padding: 1rem 0;
+	text-align: center;
+	border-radius: 8px;
+	margin-bottom: 1rem;
+
+	@media screen and (min-width: 768px) {
+		padding: 2rem 0;
+	}
 }
 
 main {
-  flex: 1;
-  display: grid;
-  place-items: center;
+	flex: 1;
+	display: grid;
+	place-items: center;
 }
 
 .container-header {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto 1rem auto;
-  background: var(--transparent-background);
-  padding: 2rem 1rem;
-  border-radius: 8px;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto 1rem auto;
+	background: var(--transparent-background);
+	padding: 2rem 1rem;
+	border-radius: 8px;
 }
 
 .container-hallo {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto 1rem auto;
-  background: var(--secondary-color);
-  padding: 2rem 1rem;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow-black);
-  @media screen and (min-width: 768px) {
-    margin-bottom: 1.5rem;
-  }
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto 1rem auto;
+	background: var(--secondary-color);
+	padding: 2rem 1rem;
+	border-radius: 8px;
+	box-shadow: var(--box-shadow-black);
+	@media screen and (min-width: 768px) {
+		margin-bottom: 1.5rem;
+	}
 }
 .container-hallo p {
-  text-align: center;
-  padding: 0.5rem 0.5rem;
+	text-align: center;
+	padding: 0.5rem 0.5rem;
 }
 .greetmessage {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 .container-new-todo {
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  gap: 0.75rem;
-  & input {
-    flex: 1;
-    padding: 0 0.5rem;
-  }
+	width: 100%;
+	max-width: 600px;
+	display: flex;
+	gap: 0.75rem;
+	& input {
+		flex: 1;
+		padding: 0 0.5rem;
+	}
 }
 
 .task-list {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto 1rem auto;
-  display: flex;
-  flex-direction: column;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 1.5rem;
-  }
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto 1rem auto;
+	display: flex;
+	flex-direction: column;
+	@media screen and (min-width: 768px) {
+		margin-bottom: 1.5rem;
+	}
 }
 
 .container-footer {
-  width: 80%;
-  max-width: 500px;
-  margin: 1rem auto;
-  background: var(--transparent-background);
-  color: var(--font-color-light);
-  padding: 2rem;
-  border-radius: 6px;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 1.5rem;
-  }
+	width: 80%;
+	max-width: 500px;
+	margin: 1rem auto;
+	background: var(--transparent-background);
+	color: var(--font-color-light);
+	padding: 2rem;
+	border-radius: 6px;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	@media screen and (min-width: 768px) {
+		margin-bottom: 1.5rem;
+	}
 }
 
 .hide {
-  display: none !important;
+	display: none !important;
 }
