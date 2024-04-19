@@ -43,6 +43,9 @@
   width: auto;
   background-color: var(--font-color-light);
   box-shadow: var(--box-shadow-button);
+  .done & {
+    color: var(--font-color-dark);
+  }
 }
 
 .chkbox-wrap {
