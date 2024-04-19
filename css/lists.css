@@ -26,6 +26,9 @@
   min-height: 2rem;
   display: flex;
   align-items: center;
+  hyphens: auto;
+  hyphenate-limit-chars: auto 3;
+  word-break: break-word;
   .done & {
     text-decoration: line-through;
     color: #dbd8f799;
