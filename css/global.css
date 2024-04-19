@@ -16,24 +16,25 @@
   --font-color-dark: #010004;
 
   /* background colors */
-  --primary-color: #3f17c2;
+  --primary-color: rgb(63, 60, 214);
   --primary-color-trans: rgba(63, 60, 214, 0.75);
-  --secondary-color: #dbd8f7;
+  --secondary-color: #eae8f5;
   --tertiary-color: #2c2b2e;
   --quaternary-color: #7948cb;
 
-  --transparent-background: rgba(244, 255, 248, 0); /*Durchsichtig*/
-  --dark-background: #000000;
-  --add-color: #05b09c;
-  --remove-color: #e11044;
-  --reset-color: #e11044;
+  /* Button colors */
+  --edit-color: #010004;
+  --add-color: rgb(25, 241, 195);
+  --remove-color: rgb(212, 49, 125);
+  --reset-color: rgb(212, 49, 125);
+  --save-color: #7948cb;
 
-  /* Schattierung */
+  /* Specials */
   --box-shadow-black: 0 4px 5px rgba(12, 4, 11, 0.5);
-  --box-shadow-black-strong: 0 8px 10px rgba(12, 4, 11, 0.8);
+  --box-shadow-extra: 10px 12px 12px rgba(12, 4, 11, 0.5);
   --box-shadow-button: 0 4px 5px rgba(22, 66, 175, 0.5);
   --border-color: 1px solid #2b3272;
-  --hover-color: #84ecf8;
+  --transparent-background: rgba(244, 255, 248, 0);
 
   /* Hintergrundbild */
   --pc1: rgba(39, 39, 41, 0.8);
@@ -49,6 +50,7 @@
 
 h1 {
   color: var(--font-color-light);
+  text-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -82,8 +84,7 @@ body {
   min-height: calc(100vh - 2rem);
   background-color: var(--primary-color);
   padding: 0.75rem;
-  border: 1px solid #c8c8c8;
-  border-color: var(--font-color-dark);
+  border: 1px solid var(--font-color-dark);
   border-radius: 16px;
   box-shadow: var(--box-shadow-black-strong);
   background-color: var(--primary-color-trans);
