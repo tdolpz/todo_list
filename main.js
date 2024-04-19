@@ -20,8 +20,8 @@ function editTask() {
   for (let i = 0; i < editButtons.length; i++) {
     editButtons[i].onclick = function () {
       let p = this.parentElement;
-      p.classList.remove("done");
-      p.children[0].checked = false;
+      //p.classList.remove("done");
+      //p.children[0].children[0].checked = false;
       p.children[1].setAttribute("contenteditable", true);
       p.children[1].focus();
       p.children[3].classList.remove("hide"); // show save btn
@@ -34,6 +34,8 @@ function saveTask() {
   for (let i = 0; i < saveButtons.length; i++) {
     saveButtons[i].onclick = function () {
       let p = this.parentElement;
+      p.children[0].children[0].checked = false;
+      p.classList.remove("done");
       p.children[1].removeAttribute("contenteditable");
       p.children[2].classList.remove("hide"); // show edit btn
       this.classList.add("hide"); // hide save btn
