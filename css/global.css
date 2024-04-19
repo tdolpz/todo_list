@@ -17,6 +17,7 @@
 
   /* background colors */
   --primary-color: #3f17c2;
+  --primary-color-trans: rgba(63, 60, 214, 0.75);
   --secondary-color: #dbd8f7;
   --tertiary-color: #2c2b2e;
   --quaternary-color: #7948cb;
@@ -33,6 +34,17 @@
   --box-shadow-button: 0 4px 5px rgba(22, 66, 175, 0.5);
   --border-color: 1px solid #2b3272;
   --hover-color: #84ecf8;
+
+  /* Hintergrundbild */
+  --pc1: rgba(39, 39, 41, 0.8);
+  --pc2: rgba(109, 100, 109, 0.8);
+  --pc3: rgba(194, 151, 196, 0.8);
+  --pc4: rgba(221, 173, 203, 0.8);
+  --pc5: rgba(142, 226, 219, 0.8);
+  --pc6: rgba(135, 207, 248, 0.8);
+  --pc7: rgba(164, 170, 240, 0.8);
+  --pc8: rgba(210, 214, 250, 0.8);
+  --pc9: rgba(255, 255, 255, 0.8);
 }
 
 h1 {
@@ -42,12 +54,19 @@ h1 {
 body {
   min-height: 100vh;
   font-family: var(--base-font);
+  background: var(--font-color-light);
   background-image: linear-gradient(
-      rgba(136, 233, 236, 0.5),
-      /* Weißer Farbfilter mit 50% Transparenz */ rgba(8, 11, 51, 0)
+      to right top,
+      var(--pc1),
+      var(--pc2),
+      var(--pc3),
+      /*var(--pc4),*/ /*var(--pc5),*/ /*var(--pc6),*/ var(--pc7),
+      var(--pc8),
+      var(--pc9)
     ),
     url("../pattern.webp");
   background-size: cover;
+
   padding: 1rem 0.5rem;
   @media screen and (min-width: 480px) {
     padding: 2rem 0.5rem;
@@ -67,12 +86,14 @@ body {
   border-color: var(--font-color-dark);
   border-radius: 16px;
   box-shadow: var(--box-shadow-black-strong);
+  background-color: var(--primary-color-trans);
+  /*
   background-image: linear-gradient(
     200deg,
     rgb(241, 233, 240) 0%,
     rgb(143, 20, 126) 30%,
     rgb(143, 75, 117) 100%
-  );
+  );*/
   @media screen and (min-width: 480px) {
     width: 90%;
     min-height: calc(100vh - 4rem);
@@ -91,13 +112,11 @@ body {
 }
 
 header {
-  background-color: rgba(8, 11, 51, 0.1);
   max-width: 600px;
   margin: 0 auto;
   color: var(--font-color-light);
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   text-align: center;
-  box-shadow: var(--box-shadow-black);
   border-radius: 8px;
   margin-bottom: 1rem;
   & h1 {
@@ -108,12 +127,14 @@ header {
       font-size: 1.6rem;
     }
   }
-
   @media screen and (min-width: 768px) {
-    padding: 2rem 0;
+    padding: 1rem 0 2rem 0;
     & h1 {
       font-size: 2rem;
     }
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 0 0 2rem 0;
   }
 }
 
