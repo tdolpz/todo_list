@@ -45,6 +45,7 @@
   box-shadow: var(--box-shadow-button);
   .done & {
     color: var(--font-color-dark);
+    text-decoration: none;
   }
 }
 
