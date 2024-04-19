@@ -7,8 +7,6 @@ const editButtons = document.getElementsByClassName("edit-btn");
 const saveButtons = document.getElementsByClassName("save-btn");
 const removeButtons = document.getElementsByClassName("remove-btn");
 
-let storageArr = [];
-
 function removeTask() {
   for (let i = 0; i < removeButtons.length; i++) {
     removeButtons[i].onclick = function () {
